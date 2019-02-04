@@ -30,6 +30,10 @@ class DropDown extends React.Component<IDropDownProps, IDropDownState> {
     onChange(dropDownName, value);
   };
 
+  public componentWillUnmount() {
+    document.removeEventListener('click', this.hideDropdownMenu);
+  }
+
   public render() {
     const { label, selectedValue, list } = this.props;
     const { displayMenu } = this.state;

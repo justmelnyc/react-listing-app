@@ -25,7 +25,7 @@ class DropDown extends React.Component<IDropDownProps, IDropDownState> {
     });
   };
 
-  public handleChange = (value: any) => {
+  public handleChange = (value: string) => {
     const { onChange, dropDownName } = this.props;
     onChange(dropDownName, value);
   };

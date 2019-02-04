@@ -31,6 +31,18 @@ class CarListContainer extends React.Component<ICarListProps, ICarListState> {
     getCarList(color, manufacturer, page, sort);
   };
 
+  public applyFilter = () => {
+    const state = this.state;
+    this.setState(
+      {
+        ...state,
+        page: 1,
+      },
+      () => {
+        this.fetchCarList();
+      },
+    );
+  };
   public changePageNo = (nextPageNo: number) => {
     const state = this.state;
     this.setState(
@@ -91,7 +103,7 @@ class CarListContainer extends React.Component<ICarListProps, ICarListState> {
                 onChange={this.handleDropDownChange}
                 list={manufacturers}
               />
-              <Button label="Filter" onClick={this.fetchCarList} />
+              <Button label="Filter" onClick={this.applyFilter} />
             </div>
           )}
           {staticDataLoading && <div className="loader" />}

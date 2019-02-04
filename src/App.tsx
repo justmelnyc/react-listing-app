@@ -1,13 +1,19 @@
-import React, { Component } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.scss';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import NotFound from './components/NotFound';
-import CarDetailsContainer from './containers/CarDetailsContainer';
-import CarListContainer from './containers/CarListContainer';
 import store from './store';
+
+const CarListContainer = lazy(() => import('./containers/CarListContainer'));
+const CarDetailsContainer = lazy(() => import('./containers/CarDetailsContainer'));
+const LoadingMessage = () => (
+  <div className="loader-container">
+    <div className="loader" />
+  </div>
+);
 
 const App: React.FunctionComponent = () => {
   return (
@@ -15,11 +21,13 @@ const App: React.FunctionComponent = () => {
       <Router>
         <div className="App">
           <Header />
-          <Switch>
-            <Route exact={true} path="/" component={CarListContainer} />
-            <Route path="/car-details/:stockNumber" component={CarDetailsContainer} />
-            <Route component={NotFound} />
-          </Switch>
+          <Suspense fallback={<LoadingMessage />}>
+            <Switch>
+              <Route exact={true} path="/" component={CarListContainer} />
+              <Route path="/car-details/:stockNumber" component={CarDetailsContainer} />
+              <Route component={NotFound} />
+            </Switch>
+          </Suspense>
           <Footer />
         </div>
       </Router>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { images } from '../../utils/imageImports';
 import './Header.scss';
 
-const Header = () => {
+const Header: React.FunctionComponent = () => {
   return (
     <div className="header">
       <div>

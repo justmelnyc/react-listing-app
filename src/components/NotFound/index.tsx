@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { images } from '../../utils/imageImports';
 import './NotFound.scss';
 
-const NotFound = () => {
+const NotFound: React.FunctionComponent = () => {
   return (
     <div className="not-found-container">
       <div className="error-container">

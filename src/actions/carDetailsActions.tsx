@@ -14,12 +14,14 @@ const getCarDetailsSuccess = (data: any) => {
     type: ActionTypes.GET_CAR_DETAILS_SUCCESS,
   };
 };
+
 const getCarDetailsError = (error: number) => {
   return {
     error,
     type: ActionTypes.GET_CAR_DETAILS_ERROR,
   };
 };
+
 export const getCarDetailsAction = (stockNumber: number) => {
   return (dispatch: any) => {
     dispatch(getCarDetailsNotify());

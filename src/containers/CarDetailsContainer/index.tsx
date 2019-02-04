@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getCarDetailsAction } from '../../actions/carDetailsActions';
-import Button from '../../components/Button';
 import { ICarDetailsProps, ICarDetailsState } from './CarDetails';
 import './CarDetails.scss';
-
+import CarSpecifications from './CarSpecifications';
+import SaveFavourite from './SaveFavourite';
 class CarDetailsContainer extends React.Component<ICarDetailsProps, ICarDetailsState> {
   constructor(props: ICarDetailsProps) {
     super(props);
@@ -60,22 +60,8 @@ class CarDetailsContainer extends React.Component<ICarDetailsProps, ICarDetailsS
               <img src={carDetails.pictureUrl} alt="pl" className="image-fullwidth" />
             </div>
             <div className="details-wrapper">
-              <div className="details-wrapper-left">
-                <div className="title">{carDetails.manufacturerName + ' ' + carDetails.modelName}</div>
-                <div className="specification">{`Stock # ${carDetails.stockNumber} - ${carDetails.mileage.number} ${
-                  carDetails.mileage.unit
-                } - ${carDetails.fuelType} - ${carDetails.color}`}</div>
-                <div className="description">
-                  This car is currently available and can be delivered as soon as tomorrow morning. Please be aware that
-                  delivery times shown in this page are not definitive and may change due to bad weather conditions.
-                </div>
-              </div>
-              <div className="details-wrapper-right">
-                <div className="favourite-item">
-                  If you like this car, click the button and save it in your collection of favourite items.
-                </div>
-                <Button label={favourite ? 'Saved' : 'Save'} isPressed={favourite} onClick={this.saveFavourite} />
-              </div>
+              <CarSpecifications carDetails={carDetails} />
+              <SaveFavourite favourite={favourite} saveFavourite={this.saveFavourite} />
             </div>
           </div>
         )}
@@ -84,7 +70,7 @@ class CarDetailsContainer extends React.Component<ICarDetailsProps, ICarDetailsS
             <div className="loader" />
           </div>
         )}
-        {error && <div>Error - {error} occured</div>}
+        {error && <div>{`Error - ${error} occured`}</div>}
       </div>
     );
   }

@@ -1,13 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getCarListAction, getStaticDataAction } from '../../actions/carListActions';
-import Button from '../../components/Button';
-import Card from '../../components/Card';
-import DropDown from '../../components/DropDown';
-import LoaderCard from '../../components/LoaderCard';
-import Paginator from '../../components/Paginator';
 import { ICarListProps, ICarListState } from './CarList';
 import './CarList.scss';
+import CarListSection from './CarListSection';
+import FilterSection from './FilterSection';
 class CarListContainer extends React.Component<ICarListProps, ICarListState> {
   constructor(props: ICarListProps) {
     super(props);
@@ -86,61 +83,27 @@ class CarListContainer extends React.Component<ICarListProps, ICarListState> {
     const { color, manufacturer, page, sort } = this.state;
     return (
       <div className="container">
-        <div className="filter-container">
-          {!staticDataLoading && !staticDataError && (
-            <div>
-              <DropDown
-                label="Color"
-                dropDownName="color"
-                selectedValue={color}
-                onChange={this.handleDropDownChange}
-                list={colors}
-              />
-              <DropDown
-                label="Manufacturer"
-                dropDownName="manufacturer"
-                selectedValue={manufacturer}
-                onChange={this.handleDropDownChange}
-                list={manufacturers}
-              />
-              <Button label="Filter" onClick={this.applyFilter} />
-            </div>
-          )}
-          {staticDataLoading && <div className="loader" />}
-          {staticDataError && <h4>Error - {staticDataError} occured</h4>}
-        </div>
-        <div className="list-container">
-          {!loading && !error && (
-            <div className="top-section">
-              <div className="top-section-left">
-                <div className="heading2">Available cars</div>
-                <div className="regular1">
-                  Showing {page * 10} of {totalPageCount * 10} cars
-                </div>
-              </div>
-              <div className="top-section-right">
-                <DropDown
-                  label="Sort by"
-                  dropDownName="sort"
-                  selectedValue={sort}
-                  onChange={this.handleDropDownChange}
-                  list={sortList}
-                />
-              </div>
-            </div>
-          )}
-          {error && <div className="heading2">Error - {error} occured</div>}
-          <div className="card-container">
-            {cars &&
-              cars.map((car: any, index: number) => {
-                return <Card data={car} key={index} />;
-              })}
-            {loading && <LoaderCard />}
-          </div>
-          {!loading && !error && (
-            <Paginator changePageNo={this.changePageNo} currentPage={page} totalPages={totalPageCount} />
-          )}
-        </div>
+        <FilterSection
+          staticDataLoading={staticDataLoading}
+          staticDataError={staticDataError}
+          color={color}
+          applyFilter={this.applyFilter}
+          handleDropDownChange={this.handleDropDownChange}
+          colors={colors}
+          manufacturer={manufacturer}
+          manufacturers={manufacturers}
+        />
+        <CarListSection
+          loading={loading}
+          error={error}
+          page={page}
+          totalPageCount={totalPageCount}
+          sort={sort}
+          sortList={sortList}
+          handleDropDownChange={this.handleDropDownChange}
+          cars={cars}
+          changePageNo={this.changePageNo}
+        />
       </div>
     );
   }

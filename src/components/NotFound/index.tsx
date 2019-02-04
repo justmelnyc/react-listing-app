@@ -11,9 +11,9 @@ const NotFound = () => {
         <div className="error">404 - Not Found</div>
         <div className="error-msg">Sorry, the page you are looking for does not exist.</div>
         <div className="error-msg">
-          You can always go back to the{' '}
+          You can always go back to the
           <Link to="/">
-            <span className="link">homepage</span>
+            <span className="link">{` homepage`}</span>
           </Link>
           .
         </div>

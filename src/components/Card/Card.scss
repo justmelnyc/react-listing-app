@@ -1,0 +1,27 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.card {
+  border: 1px solid $color-grey;
+  padding: $padding-medium;
+  display: flex;
+  margin-bottom: $margin-medium;
+  .card-image-container {
+    flex-basis: 15%;
+    .card-image {
+      width: 100%;
+    }
+  }
+  .card-details {
+    flex-basis: 85%;
+    margin-left: $margin-large;
+    .name {
+      @include heading2();
+      margin-bottom: $margin-medium;
+    }
+    .details {
+      @include regular3();
+      margin-bottom: $margin-small;
+    }
+  }
+}

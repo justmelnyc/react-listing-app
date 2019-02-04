@@ -1,0 +1,44 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+.dropdown-container {
+  position: relative;
+  .dropdown {
+    @include regular2();
+    cursor: pointer;
+    padding: $padding-small;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid $color-grey;
+    margin-bottom: $margin-medium;
+    .down-caret {
+      color: $color-grey;
+    }
+    &-label {
+      @include regular3();
+    }
+  }
+  .list-item-container {
+    margin: 0;
+    padding: 0;
+    top: 60px;
+    right: 0px;
+    width: 100%;
+    position: absolute;
+    border: 1px solid $color-grey;
+    z-index: 1;
+    background: #fff;
+    .list-item {
+      @include regular2();
+      cursor: pointer;
+      padding: $padding-small;
+      border-bottom: 1px solid $color-grey;
+      &:last-child {
+        border-bottom: none;
+      }
+      &:hover {
+        background-color: $color-orange;
+        color: $color-grey;
+      }
+    }
+  }
+}

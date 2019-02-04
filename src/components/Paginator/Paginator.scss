@@ -1,0 +1,14 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.paginator-container {
+  display: flex;
+  justify-content: center;
+  margin-top: $margin-large;
+  span {
+    margin-right: $margin-large;
+  }
+  .page-no {
+    @include regular3();
+  }
+}

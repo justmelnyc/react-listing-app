@@ -1,0 +1,38 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.loading-card {
+  border: 1px solid $color-grey;
+  padding: $padding-medium;
+  display: flex;
+  margin-bottom: $margin-medium;
+  .card-image-container {
+    flex-basis: 15%;
+    background: $color-grey;
+    .card-image {
+      width: 100%;
+    }
+  }
+  .card-details {
+    flex-basis: 85%;
+    margin-left: $margin-large;
+    .name {
+      height: $font-medium;
+      background: $color-grey;
+      margin-bottom: $margin-medium;
+      width: 50%;
+    }
+    .details {
+      height: $font-x-small;
+      background: $color-grey;
+      margin-bottom: $margin-small;
+      width: 50%;
+    }
+    .link {
+      height: $font-x-small;
+      background: $color-grey;
+      margin-bottom: $margin-small;
+      width: 20%;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@import 'variables';
+
+@mixin heading1() {
+  font-family: $font-family;
+  font-size: $font-large;
+  font-weight: $font-bold;
+}
+
+@mixin heading2() {
+  font-family: $font-family;
+  font-size: $font-medium;
+  font-weight: $font-bold;
+}
+
+@mixin regular1() {
+  font-family: $font-family;
+  font-size: $font-medium;
+}
+
+@mixin regular2() {
+  font-family: $font-family;
+  font-size: $font-small;
+}
+
+@mixin regular3() {
+  font-family: $font-family;
+  font-size: $font-x-small;
+}
+
+@mixin btn() {
+  height: $button-height - (2 * $padding-small);
+  width: $button-width;
+  background-color: $color-orange;
+  color: $color-grey;
+  padding: $padding-small;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin container() {
+  box-sizing: border-box;
+  min-height: calc(100vh - 160px);
+}

@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.scss';
 
-class App extends Component {
-  public render() {
-    return <div className="App">test</div>;
-  }
-}
+const App: React.FunctionComponent = () => {
+  return <div className="App">test</div>;
+};
 
 export default App;

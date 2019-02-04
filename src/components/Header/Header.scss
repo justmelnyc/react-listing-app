@@ -1,0 +1,23 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.header {
+  @include regular2();
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  padding: $padding-large;
+  height: $header-height;
+  border-bottom: 1px solid $color-grey;
+  .brand-logo {
+    width: 12em;
+    height: 100%;
+  }
+  .menu-item {
+    cursor: pointer;
+    &:not(:last-child) {
+      margin-right: $margin-large;
+    }
+  }
+}

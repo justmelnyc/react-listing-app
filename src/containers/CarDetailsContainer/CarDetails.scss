@@ -1,0 +1,49 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.details-container {
+  @include container();
+  a {
+    text-decoration: none;
+  }
+  .image-container {
+    overflow: hidden;
+    padding: $padding-large;
+    display: flex;
+    justify-content: center;
+  }
+  .details-wrapper {
+    display: flex;
+    width: $wrapper-width;
+    margin: auto;
+    margin-top: $margin-large;
+    &-left {
+      flex-basis: 60%;
+      margin-right: $margin-large;
+      .title {
+        @include heading1();
+        margin-bottom: $margin-large;
+      }
+      .specification {
+        @include regular1();
+        margin-bottom: $margin-large;
+      }
+      .description {
+        @include regular2();
+        margin-bottom: $margin-large;
+        line-height: 24px;
+      }
+    }
+    &-right {
+      flex-basis: 40%;
+      height: 100%;
+      margin-left: $margin-large;
+      padding: $padding-medium;
+      border: 1px solid $color-grey;
+      .favourite-item {
+        @include regular2();
+        line-height: 24px;
+      }
+    }
+  }
+}

@@ -3,6 +3,7 @@ import Card from '../../../components/Card';
 import DropDown from '../../../components/DropDown';
 import LoaderCard from '../../../components/LoaderCard';
 import Paginator from '../../../components/Paginator';
+import { TextConstants } from '../../../constants/textConstants';
 import { IListProps } from './CarListSection';
 
 const CarListSection: React.FunctionComponent<IListProps> = (props: IListProps) => {
@@ -12,7 +13,7 @@ const CarListSection: React.FunctionComponent<IListProps> = (props: IListProps) 
       {!loading && !error && (
         <div className="top-section">
           <div className="top-section-left">
-            <div className="heading2">Available cars</div>
+            <div className="heading2">{TextConstants.listHeading}</div>
             <div className="regular1">{`Showing ${page * 10} of ${totalPageCount * 10} cars`}</div>
           </div>
           <div className="top-section-right">

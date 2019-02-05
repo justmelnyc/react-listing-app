@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getCarDetailsAction } from '../../actions/carDetailsActions';
+import { readFavCar, saveFavCar } from '../../utils/saveToLocalStorage';
 import { ICarDetailsProps, ICarDetailsState } from './CarDetails';
 import './CarDetails.scss';
 import CarSpecifications from './CarSpecifications';
@@ -16,37 +17,18 @@ class CarDetailsContainer extends React.Component<ICarDetailsProps, ICarDetailsS
     const { stockNumber } = this.props.match.params;
     const { getCarDetails } = this.props;
     getCarDetails(stockNumber);
-    let favArray: number[] = [];
-    if (localStorage.getItem('auto1_favourite_cars')) {
-      const favCars = localStorage.getItem('auto1_favourite_cars') || '';
-      favArray = JSON.parse(favCars);
-    }
-    if (favArray.indexOf(stockNumber) > -1) {
-      this.setState({
-        favourite: true,
-      });
-    }
+    const favourite = readFavCar(stockNumber);
+    this.setState({
+      favourite,
+    });
   }
+
   public saveFavourite = () => {
     const { stockNumber } = this.props.match.params;
-    let favArray: number[] = [];
-    if (localStorage.getItem('auto1_favourite_cars')) {
-      const favCars = localStorage.getItem('auto1_favourite_cars') || '';
-      favArray = JSON.parse(favCars);
-    }
-    if (favArray.indexOf(stockNumber) > -1) {
-      favArray.splice(favArray.indexOf(stockNumber), 1);
-      localStorage.setItem('auto1_favourite_cars', JSON.stringify(favArray));
-      this.setState({
-        favourite: false,
-      });
-    } else {
-      favArray.push(stockNumber);
-      localStorage.setItem('auto1_favourite_cars', JSON.stringify(favArray));
-      this.setState({
-        favourite: true,
-      });
-    }
+    const favourite = saveFavCar(stockNumber);
+    this.setState({
+      favourite,
+    });
   };
 
   public render() {

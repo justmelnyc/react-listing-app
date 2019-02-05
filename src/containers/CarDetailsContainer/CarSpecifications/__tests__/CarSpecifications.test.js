@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-testing-library';
 import { carDetails } from '../../../../constants/testMockConstants';
-import CarSpecifications from '../index';
+import CarSpecifications from '..';
 import 'jest-dom/extend-expect';
 import 'react-testing-library/cleanup-after-each';
 

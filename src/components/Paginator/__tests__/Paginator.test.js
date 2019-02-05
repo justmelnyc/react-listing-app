@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from 'react-testing-library';
-import Paginator from '../index';
+import Paginator from '..';
 import 'jest-dom/extend-expect';
 import 'react-testing-library/cleanup-after-each';
 

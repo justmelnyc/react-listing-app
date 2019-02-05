@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-testing-library';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Header from '../index';
+import Header from '..';
 import 'react-testing-library/cleanup-after-each';
 
 describe('Header component', () => {

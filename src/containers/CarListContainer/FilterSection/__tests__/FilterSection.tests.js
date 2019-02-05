@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from 'react-testing-library';
 import { staticData } from '../../../../constants/testMockConstants';
-import FilterSection from '../index';
+import FilterSection from '..';
 import 'jest-dom/extend-expect';
 import 'react-testing-library/cleanup-after-each';
 

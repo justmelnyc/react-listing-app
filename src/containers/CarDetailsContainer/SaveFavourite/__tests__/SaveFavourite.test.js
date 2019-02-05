@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from 'react-testing-library';
-import SaveFavourite from '../index';
+import SaveFavourite from '..';
 import 'jest-dom/extend-expect';
 import 'react-testing-library/cleanup-after-each';
 

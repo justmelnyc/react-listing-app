@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-testing-library';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { carsList, sortListData } from '../../../../constants/testMockConstants';
-import CarListSection from '../index';
+import CarListSection from '..';
 import 'jest-dom/extend-expect';
 import 'react-testing-library/cleanup-after-each';
 

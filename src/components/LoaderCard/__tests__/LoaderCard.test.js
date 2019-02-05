@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-testing-library';
-import LoaderCard from '../index';
+import LoaderCard from '..';
 import 'react-testing-library/cleanup-after-each';
 
 describe('LoaderCard component', () => {

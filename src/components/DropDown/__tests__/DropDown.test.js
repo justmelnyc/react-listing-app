@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from 'react-testing-library';
-import DropDown, { getSelectedValue } from '../index';
+import DropDown, { getSelectedValue } from '..';
 import { staticData } from '../../../constants/testMockConstants';
 import 'jest-dom/extend-expect';
 import 'react-testing-library/cleanup-after-each';

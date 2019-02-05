@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-testing-library';
 import { BrowserRouter as Router } from 'react-router-dom';
-import NotFound from '../index';
+import NotFound from '..';
 import 'react-testing-library/cleanup-after-each';
 
 describe('NotFound component', () => {

@@ -3,20 +3,20 @@ import { ActionTypes } from '../constants/actionTypesConstants';
 import { APIConstants } from '../constants/apiConstants';
 import { ICar } from '../types/cars';
 
-const getCarDetailsNotify = () => {
+export const getCarDetailsNotify = () => {
   return {
     type: ActionTypes.GET_CAR_DETAILS_NOTIFY,
   };
 };
 
-const getCarDetailsSuccess = (data: ICar) => {
+export const getCarDetailsSuccess = (data: ICar) => {
   return {
     data,
     type: ActionTypes.GET_CAR_DETAILS_SUCCESS,
   };
 };
 
-const getCarDetailsError = (error: number) => {
+export const getCarDetailsError = (error: number) => {
   return {
     error,
     type: ActionTypes.GET_CAR_DETAILS_ERROR,

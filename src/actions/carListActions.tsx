@@ -1,8 +1,8 @@
 import axios from 'axios';
+import { Dispatch } from 'redux';
 import { ActionTypes } from '../constants/actionTypesConstants';
 import { APIConstants } from '../constants/apiConstants';
 import { ICarList, IManufacturer, IStaticData } from '../types/cars';
-
 export const getCarListNotify = () => {
   return {
     type: ActionTypes.GET_CARS_LIST_NOTIFY,
@@ -44,7 +44,7 @@ export const getStaticDataSuccess = (staticData: IStaticData) => {
 };
 
 export const getCarListAction = (color: string, manufacturer: string, page: number, sort: string) => {
-  return (dispatch: any) => {
+  return (dispatch: Dispatch) => {
     dispatch(getCarListNotify());
     const queryString = `?manufacturer=${manufacturer}&color=${color}&sort=${sort}&page=${page}`;
     axios
@@ -59,7 +59,7 @@ export const getCarListAction = (color: string, manufacturer: string, page: numb
 };
 
 export const getStaticDataAction = () => {
-  return async (dispatch: any) => {
+  return async (dispatch: Dispatch) => {
     const staticData = { manufacturers: [], colors: [] };
     dispatch(getStaticDataNotify());
     try {

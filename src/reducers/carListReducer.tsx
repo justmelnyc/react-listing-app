@@ -1,6 +1,6 @@
 import { ActionTypes } from '../constants/actionTypesConstants';
 import { ICarListAction, ICarListState } from './carListReducer.types';
-const initialState: ICarListState = {
+export const initialState: ICarListState = {
   data: null,
   error: null,
   loading: false,

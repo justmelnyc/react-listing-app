@@ -11,7 +11,7 @@ const Card: React.FunctionComponent<{ data: ICar }> = props => {
         <img src={pictureUrl} alt="pl" className="card-image" />
       </div>
       <div className="card-details">
-        <div className="name">{`${manufacturerName}  ${modelName}`}</div>
+        <div className="name" data-testid="car_name">{`${manufacturerName}  ${modelName}`}</div>
         <div className="details">{`Stock # ${stockNumber} - ${mileage.number} ${
           mileage.unit
         } - ${fuelType} - ${color}`}</div>

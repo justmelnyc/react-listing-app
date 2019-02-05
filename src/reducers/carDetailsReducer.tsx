@@ -1,13 +1,13 @@
 import { ActionTypes } from '../constants/actionTypesConstants';
 import { ICar } from '../types/cars';
-const initialState = {
+export const initialState = {
   data: null,
   error: null,
   loading: false,
 };
 interface IAction {
-  type: string;
-  data?: ICar;
+  type: string | null;
+  data?: ICar | null;
   error?: number;
 }
 

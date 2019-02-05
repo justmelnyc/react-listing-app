@@ -9,7 +9,7 @@ export interface ICarListState {
   staticDataLoading: boolean;
 }
 export interface ICarListAction {
-  type: string;
+  type: string | null;
   data?: ICarList;
   error?: number;
   staticData?: IStaticData;

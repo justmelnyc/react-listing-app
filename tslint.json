@@ -1,7 +1,8 @@
 {
   "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
   "rules": {
-    "jsx-no-lambda": false
+    "jsx-no-lambda": false,
+    "no-angle-bracket-type-assertion": false
   },
   "linterOptions": {
     "exclude": ["node_modules/**/*.ts", "coverage/lcov-report/*.js", "src/serviceWorker.ts"]

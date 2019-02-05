@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from 'react-testing-library';
+import { render } from 'react-testing-library';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { carsList, sortListData } from '../../../../constants/testMockConstants';
 import CarListSection from '../index';
@@ -49,7 +49,7 @@ describe('CarListSection component', () => {
     unmount();
   });
   it('Error message displayed successfully', () => {
-    const { unmount, getByText, debug } = render(
+    const { unmount, getByText } = render(
       <Router>
         <CarListSection
           loading={false}
@@ -64,7 +64,6 @@ describe('CarListSection component', () => {
         />
       </Router>,
     );
-    debug();
     expect(getByText('Error - 404 occured')).toHaveAttribute('class', 'heading2');
     unmount();
   });

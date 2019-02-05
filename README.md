@@ -11,7 +11,7 @@
 - Best Practices are been followed
 - Code Quality is maintained by `TSLint` and `Prettier`
 - Static type checking enabled using `TypeScript`
-- Performance Optimizations are made eg) using `functional components` majorly
+- Performance Optimizations are made eg) using `functional components` and `React.memo`
 - Dynamic imports acheived using `React.lazy`
 - Clear code organization and project structure
 - Test coverage `80%` achieved
@@ -24,7 +24,7 @@
 - Setup `storybook`
 - If application scales, splitting few functionality as `HOC` or `render props`
 - Improve performance using libraries like `reselect` memorize. Though not required at this point of time.
-- Use `PureComponent` and `React.memo` whereever applicable
+- Use `PureComponent` whereever applicable
 - Better test cases covering all edge cases and async actions
 - Better usage of TypeScript. Add typescript to test files as well
 

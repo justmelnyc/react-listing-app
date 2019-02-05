@@ -1,7 +1,7 @@
 import React from 'react';
 import './LoaderCard.scss';
 
-const LoaderCard: React.FunctionComponent = () => {
+const LoaderCard: React.FunctionComponent = React.memo(() => {
   return (
     <div className="loading-card">
       <div className="card-image-container loading">
@@ -14,6 +14,6 @@ const LoaderCard: React.FunctionComponent = () => {
       </div>
     </div>
   );
-};
+});
 
 export default LoaderCard;

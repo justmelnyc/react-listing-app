@@ -3,7 +3,7 @@ import Button from '../../../components/Button';
 import DropDown from '../../../components/DropDown';
 import { IFilterProps } from './FilterSection';
 
-const FilterSection: React.FunctionComponent<IFilterProps> = (props: IFilterProps) => {
+const FilterSection: React.FunctionComponent<IFilterProps> = React.memo((props: IFilterProps) => {
   const {
     staticDataLoading,
     staticDataError,
@@ -39,6 +39,6 @@ const FilterSection: React.FunctionComponent<IFilterProps> = (props: IFilterProp
       {staticDataError && <h4 data-testid="error">{`Error - ${staticDataError} occured`}</h4>}
     </div>
   );
-};
+});
 
 export default FilterSection;

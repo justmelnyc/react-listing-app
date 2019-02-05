@@ -5,7 +5,7 @@ import Paginator from '../../../components/Paginator';
 import { ICar } from '../../../types/cars';
 import { IListProps } from './CarListSection';
 import TopSection from './TopSection';
-const CarListSection: React.FunctionComponent<IListProps> = (props: IListProps) => {
+const CarListSection: React.FunctionComponent<IListProps> = React.memo((props: IListProps) => {
   const { loading, error, page, totalPageCount, sort, sortList, handleDropDownChange, cars, changePageNo } = props;
   return (
     <div className="list-container">
@@ -36,6 +36,6 @@ const CarListSection: React.FunctionComponent<IListProps> = (props: IListProps) 
       {!loading && !error && <Paginator changePageNo={changePageNo} currentPage={page} totalPages={totalPageCount} />}
     </div>
   );
-};
+});
 
 export default CarListSection;

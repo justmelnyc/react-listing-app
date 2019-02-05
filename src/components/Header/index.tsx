@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { images } from '../../utils/imageImports';
 import './Header.scss';
 
-const Header: React.FunctionComponent = () => {
+const Header: React.FunctionComponent = React.memo(() => {
   return (
     <div className="header">
       <div>
@@ -18,5 +18,5 @@ const Header: React.FunctionComponent = () => {
       </div>
     </div>
   );
-};
+});
 export default Header;

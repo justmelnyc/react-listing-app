@@ -4,7 +4,7 @@ import { TextConstants } from '../../constants/textConstants';
 import { images } from '../../utils/imageImports';
 import './NotFound.scss';
 
-const NotFound: React.FunctionComponent = () => {
+const NotFound: React.FunctionComponent = React.memo(() => {
   return (
     <div className="not-found-container">
       <div className="error-container">
@@ -21,6 +21,6 @@ const NotFound: React.FunctionComponent = () => {
       </div>
     </div>
   );
-};
+});
 
 export default NotFound;

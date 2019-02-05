@@ -2,7 +2,7 @@ import React from 'react';
 import { TextConstants } from '../../../constants/textConstants';
 import { ICarSpecsProps } from './CarSpecifications';
 
-const CarSpecifications: React.FunctionComponent<ICarSpecsProps> = (props: ICarSpecsProps) => {
+const CarSpecifications: React.FunctionComponent<ICarSpecsProps> = React.memo((props: ICarSpecsProps) => {
   const { carDetails } = props;
   return (
     <div className="details-wrapper-left">
@@ -12,6 +12,6 @@ const CarSpecifications: React.FunctionComponent<ICarSpecsProps> = (props: ICarS
       <div className="description">{TextConstants.carDetails}</div>
     </div>
   );
-};
+});
 
 export default CarSpecifications;

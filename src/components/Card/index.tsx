@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { ICar } from '../../types/cars';
 import './Card.scss';
 
-const Card: React.FunctionComponent<{ data: ICar }> = props => {
+const Card: React.FunctionComponent<{ data: ICar }> = React.memo(props => {
   const { pictureUrl, manufacturerName, modelName, stockNumber, mileage, fuelType, color } = props.data;
   return (
     <div className="card">
@@ -21,6 +21,6 @@ const Card: React.FunctionComponent<{ data: ICar }> = props => {
       </div>
     </div>
   );
-};
+});
 
 export default Card;

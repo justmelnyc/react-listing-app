@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '../../../components/Button';
 import { TextConstants } from '../../../constants/textConstants';
 import { IFavouriteProps } from './SaveFavourite';
-const SaveFavourite: React.FunctionComponent<IFavouriteProps> = (props: IFavouriteProps) => {
+const SaveFavourite: React.FunctionComponent<IFavouriteProps> = React.memo((props: IFavouriteProps) => {
   const { favourite, saveFavourite } = props;
   return (
     <div className="details-wrapper-right">
@@ -10,6 +10,6 @@ const SaveFavourite: React.FunctionComponent<IFavouriteProps> = (props: IFavouri
       <Button label={favourite ? 'Saved' : 'Save'} isPressed={favourite} onClick={saveFavourite} />
     </div>
   );
-};
+});
 
 export default SaveFavourite;

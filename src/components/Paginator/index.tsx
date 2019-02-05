@@ -1,7 +1,7 @@
 import React from 'react';
 import { IPaginatorProps } from './Paginator';
 import './Paginator.scss';
-const Paginator: React.FunctionComponent<IPaginatorProps> = (props: IPaginatorProps) => {
+const Paginator: React.FunctionComponent<IPaginatorProps> = React.memo((props: IPaginatorProps) => {
   const { currentPage, changePageNo, totalPages } = props;
   const calculatePage = (type: string) => {
     switch (type) {
@@ -58,6 +58,6 @@ const Paginator: React.FunctionComponent<IPaginatorProps> = (props: IPaginatorPr
       </span>
     </div>
   );
-};
+});
 
 export default Paginator;

@@ -3,7 +3,7 @@ import DropDown from '../../../components/DropDown';
 import { TextConstants } from '../../../constants/textConstants';
 import { ITopSectionProps } from './CarListSection';
 
-const TopSection: React.FunctionComponent<ITopSectionProps> = (props: ITopSectionProps) => {
+const TopSection: React.FunctionComponent<ITopSectionProps> = React.memo((props: ITopSectionProps) => {
   const { page, totalPageCount, sort, sortList, handleDropDownChange } = props;
   return (
     <div className="top-section">
@@ -22,6 +22,6 @@ const TopSection: React.FunctionComponent<ITopSectionProps> = (props: ITopSectio
       </div>
     </div>
   );
-};
+});
 
 export default TopSection;

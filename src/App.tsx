@@ -5,6 +5,8 @@ import './App.scss';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import NotFound from './components/NotFound';
+import { ICarDetailsProps } from './containers/CarDetailsContainer/CarDetails';
+import { ICarListProps } from './containers/CarListContainer/CarList';
 import store from './store';
 
 const CarListContainer = lazy(() => import('./containers/CarListContainer'));
@@ -23,8 +25,11 @@ const App: React.FunctionComponent = () => {
           <Header />
           <Suspense fallback={<LoadingMessage />}>
             <Switch>
-              <Route exact={true} path="/" component={(props: any) => <CarListContainer {...props} />} />
-              <Route path="/car-details/:stockNumber" component={(props: any) => <CarDetailsContainer {...props} />} />
+              <Route exact={true} path="/" component={(props: ICarListProps) => <CarListContainer {...props} />} />
+              <Route
+                path="/car-details/:stockNumber"
+                component={(props: ICarDetailsProps) => <CarDetailsContainer {...props} />}
+              />
               <Route component={NotFound} />
             </Switch>
           </Suspense>

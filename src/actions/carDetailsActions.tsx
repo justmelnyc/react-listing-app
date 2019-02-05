@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { ActionTypes } from '../constants/actionTypesConstants';
 import { APIConstants } from '../constants/apiConstants';
+import { ICar } from '../types/cars';
 
 const getCarDetailsNotify = () => {
   return {
@@ -8,7 +9,7 @@ const getCarDetailsNotify = () => {
   };
 };
 
-const getCarDetailsSuccess = (data: any) => {
+const getCarDetailsSuccess = (data: ICar) => {
   return {
     data,
     type: ActionTypes.GET_CAR_DETAILS_SUCCESS,

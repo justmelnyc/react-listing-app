@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ICar } from '../../types/cars';
 import './Card.scss';
 
-const Card: React.FunctionComponent<{ data: any }> = props => {
+const Card: React.FunctionComponent<{ data: ICar }> = props => {
   const { pictureUrl, manufacturerName, modelName, stockNumber, mileage, fuelType, color } = props.data;
   return (
     <div className="card">

@@ -1,41 +1,42 @@
 import axios from 'axios';
 import { ActionTypes } from '../constants/actionTypesConstants';
 import { APIConstants } from '../constants/apiConstants';
+import { ICarList, IManufacturer, IStaticData } from '../types/cars';
 
-const getCarListNotify = () => {
+export const getCarListNotify = () => {
   return {
     type: ActionTypes.GET_CARS_LIST_NOTIFY,
   };
 };
 
-const getCarListSuccess = (data: any) => {
+export const getCarListSuccess = (data: ICarList) => {
   return {
     data,
     type: ActionTypes.GET_CARS_LIST_SUCCESS,
   };
 };
 
-const getCarListError = (error: number) => {
+export const getCarListError = (error: number) => {
   return {
     error,
     type: ActionTypes.GET_CARS_LIST_ERROR,
   };
 };
 
-const getStaticDataNotify = () => {
+export const getStaticDataNotify = () => {
   return {
     type: ActionTypes.GET_STATIC_DATA_NOTIFY,
   };
 };
 
-const getStaticDataError = (error: number) => {
+export const getStaticDataError = (error: number) => {
   return {
     error,
     type: ActionTypes.GET_STATIC_DATA_ERROR,
   };
 };
 
-const getStaticDataSuccess = (staticData: any) => {
+export const getStaticDataSuccess = (staticData: IStaticData) => {
   return {
     staticData,
     type: ActionTypes.GET_STATIC_DATA_SUCCESS,
@@ -64,7 +65,7 @@ export const getStaticDataAction = () => {
     try {
       const manufacturers = await axios.get(`${APIConstants.baseURL}${APIConstants.manufacturers}`);
       if (manufacturers.data) {
-        staticData.manufacturers = manufacturers.data.manufacturers.map((manufacturer: any) => {
+        staticData.manufacturers = manufacturers.data.manufacturers.map((manufacturer: IManufacturer) => {
           return {
             label: manufacturer.name,
             value: manufacturer.name,

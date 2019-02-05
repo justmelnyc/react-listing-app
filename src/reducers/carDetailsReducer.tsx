@@ -1,5 +1,5 @@
 import { ActionTypes } from '../constants/actionTypesConstants';
-
+import { ICar } from '../types/cars';
 const initialState = {
   data: null,
   error: null,
@@ -7,7 +7,7 @@ const initialState = {
 };
 interface IAction {
   type: string;
-  data?: any;
+  data?: ICar;
   error?: number;
 }
 

@@ -1,10 +1,11 @@
+import { IDRopDownObject } from '../../../types/cars';
 export interface IFilterProps {
   staticDataLoading: boolean;
   staticDataError: number | null;
   color: string;
-  colors: any;
+  colors: IDRopDownObject[];
   manufacturer: string;
-  manufacturers: any;
+  manufacturers: IDRopDownObject[];
   applyFilter: () => void;
   handleDropDownChange: (dropDownName: string, value: string) => void;
 }

@@ -16,7 +16,7 @@ class CarDetailsContainer extends React.Component<ICarDetailsProps, ICarDetailsS
     const { stockNumber } = this.props.match.params;
     const { getCarDetails } = this.props;
     getCarDetails(stockNumber);
-    let favArray: string[] = [];
+    let favArray: number[] = [];
     if (localStorage.getItem('auto1_favourite_cars')) {
       const favCars = localStorage.getItem('auto1_favourite_cars') || '';
       favArray = JSON.parse(favCars);
@@ -29,7 +29,7 @@ class CarDetailsContainer extends React.Component<ICarDetailsProps, ICarDetailsS
   }
   public saveFavourite = () => {
     const { stockNumber } = this.props.match.params;
-    let favArray: any = [];
+    let favArray: number[] = [];
     if (localStorage.getItem('auto1_favourite_cars')) {
       const favCars = localStorage.getItem('auto1_favourite_cars') || '';
       favArray = JSON.parse(favCars);

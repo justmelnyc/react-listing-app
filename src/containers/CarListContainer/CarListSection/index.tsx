@@ -2,9 +2,9 @@ import React from 'react';
 import Card from '../../../components/Card';
 import LoaderCard from '../../../components/LoaderCard';
 import Paginator from '../../../components/Paginator';
+import { ICar } from '../../../types/cars';
 import { IListProps } from './CarListSection';
 import TopSection from './TopSection';
-
 const CarListSection: React.FunctionComponent<IListProps> = (props: IListProps) => {
   const { loading, error, page, totalPageCount, sort, sortList, handleDropDownChange, cars, changePageNo } = props;
   return (
@@ -23,7 +23,7 @@ const CarListSection: React.FunctionComponent<IListProps> = (props: IListProps) 
 
       <div className="card-container">
         {cars &&
-          cars.map((car: any, index: number) => {
+          cars.map((car: ICar, index: number) => {
             return <Card data={car} key={index} />;
           })}
         {loading && <LoaderCard />}

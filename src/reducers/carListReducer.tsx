@@ -1,6 +1,6 @@
 import { ActionTypes } from '../constants/actionTypesConstants';
-
-const initialState = {
+import { ICarListAction, ICarListState } from './carListReducer.types';
+const initialState: ICarListState = {
   data: null,
   error: null,
   loading: false,
@@ -8,14 +8,8 @@ const initialState = {
   staticDataError: null,
   staticDataLoading: false,
 };
-interface IAction {
-  type: string;
-  data?: any;
-  error?: number;
-  staticData?: any;
-}
 
-export const carListReducer = (state = initialState, action: IAction) => {
+export const carListReducer = (state = initialState, action: ICarListAction): ICarListState => {
   switch (action.type) {
     case ActionTypes.GET_CARS_LIST_NOTIFY:
       return Object.assign({}, state, { data: null, error: null, loading: true });

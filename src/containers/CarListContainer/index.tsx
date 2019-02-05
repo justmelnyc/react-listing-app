@@ -154,7 +154,7 @@ const mapStateToProps = (state: any) => {
 };
 
 const mapDispatchToProps = (dispatch: any) => ({
-  getCarList: (color: any, manufacturer: any, page: any, sort: any) => {
+  getCarList: (color: string, manufacturer: string, page: number, sort: string) => {
     dispatch(getCarListAction(color, manufacturer, page, sort));
   },
   getStaticData: () => {

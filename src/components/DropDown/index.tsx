@@ -1,6 +1,7 @@
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { IDRopDownObject } from '../../types/cars';
 import { IDropDownProps, IDropDownState } from './DropDown';
 import './DropDown.scss';
 
@@ -39,7 +40,7 @@ class DropDown extends React.Component<IDropDownProps, IDropDownState> {
     const { displayMenu } = this.state;
     let selected = '';
     if (list) {
-      list.forEach((e: any) => {
+      list.forEach((e: IDRopDownObject) => {
         if (selectedValue === e.value) {
           selected = e.label;
         }
@@ -56,7 +57,7 @@ class DropDown extends React.Component<IDropDownProps, IDropDownState> {
         </div>
         {displayMenu && list && (
           <div className="list-item-container">
-            {list.map((option: any, index: number) => {
+            {list.map((option: IDRopDownObject, index: number) => {
               return (
                 <div
                   className="list-item"

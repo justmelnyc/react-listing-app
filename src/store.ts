@@ -17,5 +17,7 @@ const rootReducer = combineReducers({
   carListReducer,
 });
 
+export type AppState = ReturnType<typeof rootReducer>;
+
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
 export default store;

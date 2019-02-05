@@ -1,47 +1,61 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Auto1 Car Listing SPA
 
-## Available Scripts
+## Note:
 
-In the project directory, you can run:
+- This project was bootstrapped with Create React App
+- Please run the mockServer before testing it.
+- Also enable CORS in mockserver.
 
-### `npm start`
+### Features of the project
 
-Runs the app in the development mode.<br> Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Best Practices are been followed
+- Code Quality is maintained by `TSLint` and `Prettier`
+- Static type checking enabled using `TypeScript`
+- Performance Optimizations are made eg) using `functional components` majorly
+- Dynamic imports acheived using `React.lazy`
+- Clear code organization and project structure
+- Test coverage `80%` achieved
+- Basic setup using `.env` variables are implemented
+- Error states and Loading states are handled
 
-The page will reload if you make edits.<br> You will also see any lint errors in the console.
+### Further enhancements
 
-### `npm test`
+- Setup `Docker`
+- Setup `storybook`
+- If application scales, splitting few functionality as `HOC` or `render props`
+- Improve performance using libraries like `reselect` memorize. Though not required at this point of time.
+- Use `PureComponent` and `React.memo` whereever applicable
+- Better test cases covering all edge cases and async actions
+- Better usage of TypeScript. Add typescript to test files as well
 
-Launches the test runner in the interactive watch mode.<br> See the section about
-[running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Scripts
 
-### `npm run build`
+Before running any script, please install npm dependencies with either `npm install` or `yarn`.
 
-Builds the app for production to the `build` folder.<br> It correctly bundles React in production mode and optimizes the
-build for the best performance.
+##### `npm run dev-start`
 
-The build is minified and the filenames include the hashes.<br> Your app is ready to be deployed!
+Runs the server at `http://localhost:3000` in development mode with Redux devtools enabled.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##### `npm start`
 
-### `npm run eject`
+Runs the server at `http://localhost:8080` in production mode.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+##### `npm run build`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will
-remove the single build dependency from your project.
+Runs build and generates production-optimized static files.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right
-into your project so you have full control over them. All of the commands except `eject` will still work, but they will
-point to the copied scripts so you can tweak them. At this point you’re on your own.
+##### `npm run coverage`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you
-shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t
-customize it when you are ready for it.
+Generates Test Coverage report
 
-## Learn More
+##### `npm run test`
 
-You can learn more in the
-[Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Runs the test cases in watch mode.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+##### `npm run lint`
+
+Runs tslint.
+
+##### `npm run format`
+
+Runs Prettier and auto formats the files.

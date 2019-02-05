@@ -26,7 +26,11 @@ const CarListSection: React.FunctionComponent<IListProps> = (props: IListProps) 
           cars.map((car: ICar, index: number) => {
             return <Card data={car} key={index} />;
           })}
-        {loading && <LoaderCard />}
+        {loading && (
+          <div data-testid="loader">
+            <LoaderCard />
+          </div>
+        )}
       </div>
 
       {!loading && !error && <Paginator changePageNo={changePageNo} currentPage={page} totalPages={totalPageCount} />}

@@ -35,8 +35,8 @@ const FilterSection: React.FunctionComponent<IFilterProps> = (props: IFilterProp
           <Button label="Filter" onClick={applyFilter} />
         </div>
       )}
-      {staticDataLoading && <div className="loader" />}
-      {staticDataError && <h4>{`Error - ${staticDataError} occured`}</h4>}
+      {staticDataLoading && <div data-testid="loader" className="loader" />}
+      {staticDataError && <h4 data-testid="error">{`Error - ${staticDataError} occured`}</h4>}
     </div>
   );
 };

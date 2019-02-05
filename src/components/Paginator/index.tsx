@@ -17,9 +17,6 @@ const Paginator: React.FunctionComponent<IPaginatorProps> = (props: IPaginatorPr
       case 'next':
         changePageNo(currentPage + 1 <= totalPages ? currentPage + 1 : totalPages);
         return;
-      default:
-        changePageNo(1);
-        return;
     }
   };
   return (

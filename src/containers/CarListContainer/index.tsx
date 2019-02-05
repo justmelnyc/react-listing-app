@@ -1,10 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getCarListAction, getStaticDataAction } from '../../actions/carListActions';
+import { sortListData } from '../../constants/testMockConstants';
 import { ICarListProps, ICarListState } from './CarList';
 import './CarList.scss';
 import CarListSection from './CarListSection';
 import FilterSection from './FilterSection';
+
 class CarListContainer extends React.Component<ICarListProps, ICarListState> {
   constructor(props: ICarListProps) {
     super(props);
@@ -133,20 +135,7 @@ const mapStateToProps = (state: any) => {
           ...staticData.manufacturers,
         ]
       : [],
-    sortList: [
-      {
-        label: 'None',
-        value: '',
-      },
-      {
-        label: 'Mileage Ascending',
-        value: 'asc',
-      },
-      {
-        label: 'Mileage Descending',
-        value: 'des',
-      },
-    ],
+    sortList: sortListData,
     staticDataError,
     staticDataLoading,
     totalPageCount: data ? data.totalPageCount : 0,

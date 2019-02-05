@@ -43,3 +43,18 @@ export const staticData = {
     },
   ],
 };
+
+export const sortListData = [
+  {
+    label: 'None',
+    value: '',
+  },
+  {
+    label: 'Mileage Ascending',
+    value: 'asc',
+  },
+  {
+    label: 'Mileage Descending',
+    value: 'des',
+  },
+];

@@ -7,8 +7,7 @@ import 'react-testing-library/cleanup-after-each';
 
 describe('CarSpecifications component', () => {
   it('CarSpecifications displayed in Saved state', () => {
-    const { unmount, getByText, debug } = render(<CarSpecifications carDetails={carDetails} />);
-    debug();
+    const { unmount, getByText } = render(<CarSpecifications carDetails={carDetails} />);
     expect(getByText('Fiat Marea')).toHaveClass('title');
     unmount();
   });

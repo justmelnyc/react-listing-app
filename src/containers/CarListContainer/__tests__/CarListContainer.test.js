@@ -10,7 +10,7 @@ describe('CarListContainer component', () => {
   const getStaticData = jest.fn();
 
   it('CarListContainer rendered without crash', async () => {
-    const { unmount, debug } = renderWithRedux(
+    const { unmount } = renderWithRedux(
       <CarListContainer
         manufacturers={staticData.manufacturers}
         colors={staticData.colors}
@@ -25,7 +25,6 @@ describe('CarListContainer component', () => {
         getCarList={getCarList}
       />,
     );
-    debug();
     unmount();
   });
 });

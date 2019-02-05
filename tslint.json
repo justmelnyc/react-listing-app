@@ -5,6 +5,6 @@
     "no-angle-bracket-type-assertion": false
   },
   "linterOptions": {
-    "exclude": ["node_modules/**/*.ts", "coverage/lcov-report/*.js", "src/serviceWorker.ts"]
+    "exclude": ["node_modules/**/*.ts", "coverage/lcov-report/*.js", "src/serviceWorker.ts", "scripts/*.js"]
   }
 }

@@ -35,13 +35,14 @@
   },
   "scripts": {
     "build": "react-scripts build",
-    "coverage": "npm run test -- --coverage --collectCoverageFrom=src/**/*.ts --collectCoverageFrom=src/**/*.tsx --collectCoverageFrom=!src/serviceWorker.ts --collectCoverageFrom=!src/index.tsx",
+    "coverage": "npm run test -- --coverage --collectCoverageFrom=src/**/\"**/*.+(js|jsx|ts|tsx)\" --collectCoverageFrom=!src/\"(index.tsx|serviceWorker.ts)\"",
     "eject": "react-scripts eject",
     "format": "npm run prettier -- --write",
     "lint": "tslint -p ./",
     "precommit": "npm run validate",
     "prettier": "prettier \"**/*.+(js|jsx|json|yml|yaml|scss|ts|tsx|md|mdx)\"",
-    "start": "react-scripts start",
+    "start": "npm run build && PORT=8080 node scripts/server.js",
+    "dev-start": "react-scripts start",
     "test": "react-scripts test",
     "validate": "lint-staged"
   },

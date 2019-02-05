@@ -110,26 +110,27 @@ class CarListContainer extends React.Component<ICarListProps, ICarListState> {
 }
 
 const mapStateToProps = (state: any) => {
+  const { data, staticData, error, loading, staticDataError, staticDataLoading } = state.carListReducer;
   return {
-    cars: state.carListReducer.data ? state.carListReducer.data.cars : [],
-    colors: state.carListReducer.staticData
+    cars: data ? data.cars : [],
+    colors: staticData
       ? [
           {
             label: 'All car colors',
             value: '',
           },
-          ...state.carListReducer.staticData.colors,
+          ...staticData.colors,
         ]
       : [],
-    error: state.carListReducer.error,
-    loading: state.carListReducer.loading,
-    manufacturers: state.carListReducer.staticData
+    error,
+    loading,
+    manufacturers: staticData
       ? [
           {
             label: 'All manufacturers',
             value: '',
           },
-          ...state.carListReducer.staticData.manufacturers,
+          ...staticData.manufacturers,
         ]
       : [],
     sortList: [
@@ -146,9 +147,9 @@ const mapStateToProps = (state: any) => {
         value: 'des',
       },
     ],
-    staticDataError: state.carListReducer.staticDataError,
-    staticDataLoading: state.carListReducer.staticDataLoading,
-    totalPageCount: state.carListReducer.data ? state.carListReducer.data.totalPageCount : 0,
+    staticDataError,
+    staticDataLoading,
+    totalPageCount: data ? data.totalPageCount : 0,
   };
 };
 

@@ -77,10 +77,11 @@ class CarDetailsContainer extends React.Component<ICarDetailsProps, ICarDetailsS
 }
 
 const mapStateToProps = (state: any) => {
+  const { data, error, loading } = state.carDetailsReducer;
   return {
-    carDetails: state.carDetailsReducer.data ? state.carDetailsReducer.data.car : null,
-    error: state.carDetailsReducer.error,
-    loading: state.carDetailsReducer.loading,
+    carDetails: data ? data.car : null,
+    error,
+    loading,
   };
 };
 

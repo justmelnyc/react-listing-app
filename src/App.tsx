@@ -23,8 +23,8 @@ const App: React.FunctionComponent = () => {
           <Header />
           <Suspense fallback={<LoadingMessage />}>
             <Switch>
-              <Route exact={true} path="/" component={CarListContainer} />
-              <Route path="/car-details/:stockNumber" component={CarDetailsContainer} />
+              <Route exact={true} path="/" component={(props: any) => <CarListContainer {...props} />} />
+              <Route path="/car-details/:stockNumber" component={(props: any) => <CarDetailsContainer {...props} />} />
               <Route component={NotFound} />
             </Switch>
           </Suspense>
